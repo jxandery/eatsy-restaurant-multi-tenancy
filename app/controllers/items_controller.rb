@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
 	def show
 
 	end
-
+# deleted the categories_list method because the intent wasn't very clear. see waffle card #5 for action items to resolve
 	def create
 		@item = Item.new(item_params)
 		if @item.save
@@ -28,6 +28,7 @@ class ItemsController < ApplicationController
 	def edit
 	end
 
+# deleted the categories_list method because the intent wasn't very clear. see waffle card #5 for action items to resolve
 	def update
 		if @item.update(item_params)
 			@item.categories_list(params['item']['categories'])

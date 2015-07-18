@@ -68,4 +68,5 @@ RSpec.describe Item, :type => :model do
     result = item.orders
     expect(result.count).to eq(2)
   end
+
 end
