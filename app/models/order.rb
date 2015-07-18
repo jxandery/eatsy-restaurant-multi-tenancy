@@ -26,8 +26,6 @@ class Order < ActiveRecord::Base
   validates :order_total,      presence: true
   validates :order_type,       presence: true
   validates :delivery_address, presence: true, if: :delivery?
-  # validates :order_status,     presence: true
-  # validates :order_status,     presence: true, inclusion: {in: Status::ALL}
 
   def delivery?
     order_type == "delivery"
