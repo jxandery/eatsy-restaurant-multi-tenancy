@@ -33,4 +33,21 @@ RSpec.describe Category, :type => :model do
 
     expect(results.count).to eq(2)
   end
+
+  it 'joins item titles' do
+    category.items.create(
+    	id: 140,
+    	title: 'Key Lime',
+    	description: 'Yum',
+    	price_pie: 28.00
+    	)
+    category.items.create(
+    	id: 125,
+    	title: 'Apple',
+    	description: 'Yum',
+    	price_pie: 28.00
+    	)
+
+    expect(category.item_titles).to eq('Key Lime, Apple')
+  end
 end
