@@ -22,21 +22,6 @@ RSpec.describe OrdersController, :type => :controller do
     end
   end
 
-  describe "GET new" do
-    it "assigns a new order as @order" do
-      get :new, {}, valid_session
-      expect(assigns(:order)).to be_a_new(Order)
-    end
-  end
-
-  describe "GET edit" do
-    it "assigns the requested order as @order" do
-      order = Order.create! valid_attributes
-      get :edit, {:id => order.to_param}, valid_session
-      expect(assigns(:order)).to eq(order)
-    end
-  end
-
   describe "POST create" do
     describe "with valid params" do
       it "creates a new Order" do
