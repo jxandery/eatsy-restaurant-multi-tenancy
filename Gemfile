@@ -8,6 +8,7 @@ group :development, :test do
 	gem 'pry'
   gem 'launchy'
 	gem 'aasm', '~> 3.3.3'
+  gem 'simplecov', :require => false
 end
 
 gem "paperclip", "~> 4.1"
