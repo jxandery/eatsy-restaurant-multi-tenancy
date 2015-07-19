@@ -8,6 +8,10 @@
   </head>
   <body>
 
+    <% if flash[:error] %>
+      <div class="error"><%= flash[:error] %></div>
+    <% end %>
+
     <div class="content">
       <%= yield %>
     </div>
