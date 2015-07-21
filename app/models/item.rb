@@ -18,27 +18,7 @@ class Item < ActiveRecord::Base
   scope :not_retired_too, -> { where(retire: 'f') }
   scope :retired, -> { where(retire: 't') }
 
-  def category_names
-    categories.join(", ")
-  end
-
-  def categories_list(category_list)
-    if category_list
-      valid_categories = category_list.reject do |cat|
-        cat.empty?
-      end
-
-      new_or_found_categories = valid_categories.map do |name|
-        Category.find_or_create_by(name: name)
-      end
-
-      self.categories = new_or_found_categories
-    end
-  end
-
   def to_s
     title
   end
-
-
 end
