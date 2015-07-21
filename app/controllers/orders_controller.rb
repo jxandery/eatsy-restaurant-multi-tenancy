@@ -19,24 +19,6 @@ class OrdersController < ApplicationController
     end
   end
 
-  def update
-    respond_to do |format|
-      if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
-    end
-  end
-
-  def destroy
-    @order.destroy
-
-    flash.notice= 'Order was successfully destroyed.'
-
-    redirect_to admin_orders_url
-  end
-
   private
 
     def set_order
